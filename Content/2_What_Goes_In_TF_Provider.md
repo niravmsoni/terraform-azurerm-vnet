@@ -1,0 +1,26 @@
+# What goes within a TF Provider?
+
+- What goes in a TF Provider?
+    - Versioned
+        - All providers are versioned
+    - Providers have data sources
+        - Information that can be pulled from provider about target environment
+        - Ex: Pull list of marketplace images OR Get existing VNet etc.
+    - Resources
+        - Resources that can be created in a target environment (Azure VM)
+    - Modules
+        - Most providers have modules that help us easily deploy common configurations for that provider. They can be found on registry
+    - Authentication
+        - Support various authentication mechanisms to interact with Provider
+        - With Azure, we use Azure AD to provide that authentication
+        - Different ways to authenticate with respect to Azure AD
+            - Azure CLI
+                - Using az login, TF will be able to find those credentials and use them when invoking provider
+            - Managed Service Identity
+                - Managed Identity can be assigned to objects that run within Azure
+                - For ex - If we have a VM within Azure and TF runs within it, we can assign MI to that VM and not AzureCLI for authentication
+            - Service principal with client secret (Username and pwd)
+                - Usename and Password
+                - Create service principal in Azure AD and a client secret and use those 2 to authenticate to Azure AD
+            - Service principal with client certificate
+                - Username and generated client certificate for authentication
