@@ -1,5 +1,5 @@
 # Terraform with Azure Provider
-- Authentication using Client ID and Client Secret. Refer [this]()
+- Authentication using Client ID and Client Secret. Refer [this](Content/4_Steps_To_Run_TF_Locally.md)
 - Once done, execute core TF workflow
     - terraform init
     - terraform plan -var resource_group_name=main-vnet -out vnet.tfplan
