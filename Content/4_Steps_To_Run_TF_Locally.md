@@ -3,7 +3,7 @@
     - AzureCLI - Already installed
     - Terraform - Already installed
 
-- Steps [here](https://learn.microsoft.com/en-us/azure/developer/terraform/authenticate-to-azure?tabs=bash)
+- Detailed Steps [here](https://learn.microsoft.com/en-us/azure/developer/terraform/authenticate-to-azure?tabs=bash)
     - Initial Setup - Subscription ID
         - Login to Azure CLI using "az login"
         - Verify account details using "az account show"
