@@ -1,5 +1,6 @@
 # Terraform with Azure Provider
-- Authentication using Client ID and Client Secret. Refer [this](Content/4_Steps_To_Run_TF_Locally.md)
+- Authentication Mechanism used
+  - Client ID and Client Secret. Refer [this](Content/4_Steps_To_Run_TF_Locally.md)
 - Once done, execute core TF workflow
 - terraform init
       
