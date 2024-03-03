@@ -29,3 +29,5 @@ Subnets
 - terraform destroy
 
 ![image](https://github.com/niravmsoni/terraform-on-azure/assets/6556021/b3860d70-1020-490e-990a-5cba8f92c237)
+
+![image](https://github.com/niravmsoni/terraform-on-azure/assets/6556021/22bb475c-c677-4a18-8662-e98a743f4146)
