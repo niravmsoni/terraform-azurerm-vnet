@@ -1,0 +1,25 @@
+# Steps taken to run Terraform locally
+- Pre-Requisite
+    - AzureCLI - Already installed
+    - Terraform - Already installed
+
+- Steps [here](https://learn.microsoft.com/en-us/azure/developer/terraform/authenticate-to-azure?tabs=bash)
+    - Initial Setup - Subscription ID
+        - Login to Azure CLI using "az login"
+        - Verify account details using "az account show"
+        - Find out Subscription Id using this query
+            - az account list --query "[?user.name=='<myemailIdRegisteredWithAzure>'].{Name:name, ID:id, Default:isDefault}" --output Table
+        - Set Azure subscription using "az account set"
+            - Pass subscription retrieved from previous step
+    - Create Service Principal
+        - Set "export MSYS_NO_PATHCONV=1"
+        - Create Service Principal
+            - az ad sp create-for-rbac --name <service_principal_name> --role Contributor --scopes /subscriptions/<subscription_id>
+            - Replace "Service Principal name" and "Subscription ID"
+        - Set service principal credentials as Environment variables. All values to be substituted from output of previous step
+            - export ARM_SUBSCRIPTION_ID="<azure_subscription_id>"
+            - export ARM_TENANT_ID="<azure_subscription_tenant_id>"
+            - export ARM_CLIENT_ID="<service_principal_appid>"
+            - export ARM_CLIENT_SECRET="<service_principal_password>"
+        - Verify if environment variables are set correctly using this command
+            - printenv | grep ^ARM*
