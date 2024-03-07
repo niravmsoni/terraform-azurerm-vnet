@@ -1,7 +1,12 @@
-# Creating Security VNet
+# Creating RG and Security VNet
 resource "azurerm_resource_group" "vnet_sec" {
   name     = var.sec_resource_group_name
   location = var.location
+  
+  tags = {
+    environment = "security"
+    costcenter  = "security"
+  }
 }
 
 module "vnet-sec" {
@@ -17,7 +22,6 @@ module "vnet-sec" {
   tags = {
     environment = "security"
     costcenter  = "security"
-
   }
 
   depends_on = [azurerm_resource_group.vnet_sec]
